@@ -87,3 +87,7 @@ VALUES
 INSERT INTO Reservas (fecha_reserva, fecha_entrada, fecha_salida, id_habitacion, Num_Cedula_Cliente)
 VALUES
     ('2022-03-11', '2022-03-16', '2022-03-21', 15, '9999999999');
+
+
+
+----
