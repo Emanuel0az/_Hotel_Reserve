@@ -25,3 +25,5 @@ INNER JOIN clientes c ON r.`Num_Cedula_Cliente` = c.`Num_Cedula`
 WHERE h.`Disponibilidad` = 'ocupado';
 
 SELECT * FROM mostrar_ocupadas
+
+------------------------------------------
