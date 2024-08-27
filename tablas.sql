@@ -1,4 +1,4 @@
--- Active: 1724445948647@@127.0.0.1@3306@hotel_reserve
+-- Active: 1724445852651@@127.0.0.1@3306@hotel
 CREATE DATABASE Hotel
 
 use hotel
@@ -10,10 +10,10 @@ CREATE TABLE Clientes (
     apellido VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL
 );
-CREATE INDEX idx_Num_Cedula ON Clientes(Num_Cedula)
-CREATE INDEX idx_Nombre ON Clientes(Nombre)
-CREATE INDEX idx_apellido ON Clientes(apellido)
-CREATE INDEX idx_email ON Clientes(email)
+CREATE INDEX idx_Num_Cedula ON Clientes(Num_Cedula),
+CREATE INDEX idx_Nombre ON Clientes(Nombre),
+CREATE INDEX idx_apellido ON Clientes(apellido),
+CREATE INDEX idx_email ON Clientes(email);
 ------------------------------------------------------------------_
 
 ------------------------------------------------------------------_
@@ -54,6 +54,7 @@ CREATE INDEX idx_Tipo_Habitacion ON Habitaciones(Tipo_Habitacion)
 CREATE INDEX idx_Capacidad ON Habitaciones(Capacidad)
 CREATE INDEX idx_Precio ON  Habitaciones(Precio)
 ----_____----
+
 ALTER TABLE Habitaciones
 MODIFY COLUMN Tipo_Habitacion ENUM('Individual', 'Doble', 'Triple', 'Cuádruple', 'Suite') NOT NULL;
 ------------------------------------------------------------------_
@@ -66,7 +67,7 @@ CREATE TABLE Reservas (
     id_habitacion INT NOT NULL,
     Num_Cedula_Cliente VARCHAR(100) NOT NULL,
     Foreign Key (id_habitacion) REFERENCES Habitaciones(id_habitacion),
-    Foreign Key (Num_Cedula_Cliente) REFERENCES Clientes(Num_Cedula),
+    Foreign Key (Num_Cedula_Cliente) REFERENCES Clientes(Num_Cedula)
 );
 CREATE INDEX idx_id_reserva on Reservas(id_reserva)
 CREATE INDEX idx_fecha_reserva ON Reservas(fecha_reserva)
@@ -75,3 +76,5 @@ CREATE INDEX idx_fecha_salida ON Reservas(fecha_salida)
 CREATE INDEX idx_id_habitacion ON Reservas(id_habitacion)
 CREATE INDEX idx_Num_Cedula_Cliente ON  Reservas(Num_Cedula_Cliente)
 ------------------------------------------------------------------_
+
+drop DATABASE hotel
