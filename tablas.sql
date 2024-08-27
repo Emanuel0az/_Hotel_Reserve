@@ -4,6 +4,9 @@ CREATE DATABASE Hotel
 use hotel
 
 ------------------------------------------------------------------_
+
+----------------------------------------------------
+
 CREATE TABLE Clientes (
     Num_Cedula VARCHAR(100) NOT NULL PRIMARY KEY,
     Nombre VARCHAR(100) NOT NULL,
@@ -24,10 +27,8 @@ CREATE TABLE Trabajador (
 );
 CREATE INDEX idx_Num_Cedula ON Trabajador(Num_Cedula)
 CREATE INDEX idx_Nombre ON Trabajador(Nombre)
-CREATE INDEX idx_Nombre ON Trabajador(Tipo_Trabajador)
-------------------------------------------------------------------_
+CREATE INDEX idx_Tipo_Trabajador ON Trabajador(Tipo_Trabajador)
 
-------------------------------------------------------------------_
 CREATE TABLE Administradores (
     Num_Cedula VARCHAR(100) NOT NULL PRIMARY KEY,
     Nombre VARCHAR(100) NOT NULL,
@@ -35,14 +36,50 @@ CREATE TABLE Administradores (
                             'G_Recursos_Humanos', 'G_Finanzas', 'G_Eventos',
                             'G_Mantenimiento', 'G_Seguridad')
 );
-CREATE INDEX idx_Num_Cedula ON Reservas(Num_Cedula)
-CREATE INDEX idx_Nombre ON Reservas(Nombre)
-CREATE INDEX idx_Tipo_Administrador ON Reservas(Tipo_Administrador)
-------------------------------------------------------------------_
+CREATE INDEX idx_Num_Cedula ON Administradores(Num_Cedula)
+CREATE INDEX idx_Nombre ON Administradores(Nombre)
+CREATE INDEX idx_Tipo_Administrador ON Administradores(Tipo_Administrador)
 
 ------------------------------------------------------------------_
-CREATE TABLE Habitaciones (
-    id_habitacion INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+CREATE TABLE HabitacionesA (
+    Num_HabitacionA VARCHAR(100) NOT NULL PRIMARY KEY,
+    Disponibilidad ENUM('Disponible', 'Ocupado', 'En limpieza', 'En mantenimiento', 'Otros', 'Reservado'),
+    Tipo_Habitacion VARCHAR(100) NOT NULL,
+    Capacidad INT NOT NULL,
+    Precio DECIMAL(10,2) NOT NULL
+);
+
+create Table HotelA (
+    id_hotel INT PRIMARY KEY NOT NULL NOT NULL,
+    habitaciones VARCHAR(100) NOT NULL,
+    Foreign Key (habitaciones) REFERENCES habitacionesA(Num_Habitacion),
+    ubicacion VARCHAR(100) NOT NULL
+);
+----------------------------------------------------
+create Table HotelB (
+    id_hotel INT PRIMARY KEY NOT NULL,
+    habitaciones VARCHAR(100) NOT NULL,
+    Foreign Key (habitaciones) REFERENCES habitacionesB(Num_Habitacion) NOT NULL,
+    ubicacion VARCHAR(100) NOT NULL
+);
+----------------------------------------------------
+create Table HotelC (
+    id_hotel INT PRIMARY KEY NOT NULL,
+    habitaciones VARCHAR(100) NOT NULL,
+    Foreign Key (habitaciones) REFERENCES habitacionesC(Num_Habitacion) NOT NULL,
+    ubicacion VARCHAR(100) NOT NULL
+);
+
+CREATE INDEX idx_id_habitacion ON Habitaciones(id_habitacion),
+CREATE INDEX idx_Disponibilidad ON Habitaciones(Disponibilidad),
+CREATE INDEX idx_Capacidad ON Habitaciones(Capacidad),
+CREATE INDEX idx_Precio ON  Habitaciones(Precio);
+----_____----
+ALTER TABLE Habitaciones
+MODIFY COLUMN Tipo_Habitacion ENUM('Individual', 'Doble', 'Triple', 'Cuádruple', 'Suite') NOT NULL;
+------------------------------------------------------------------_
+CREATE TABLE HabitacionesB (
+    Num_HabitacionB VARCHAR(100) NOT NULL PRIMARY KEY,
     Disponibilidad ENUM('Disponible', 'Ocupado', 'En limpieza', 'En mantenimiento', 'Otros', 'Reservado'),
     Tipo_Habitacion VARCHAR(100) NOT NULL,
     Capacidad INT NOT NULL,
@@ -50,13 +87,21 @@ CREATE TABLE Habitaciones (
 );
 CREATE INDEX idx_id_habitacion ON Habitaciones(id_habitacion),
 CREATE INDEX idx_Disponibilidad ON Habitaciones(Disponibilidad),
-CREATE INDEX idx_Tipo_Habitacion ON Habitaciones(Tipo_Habitacion),
 CREATE INDEX idx_Capacidad ON Habitaciones(Capacidad),
 CREATE INDEX idx_Precio ON  Habitaciones(Precio);
 ----_____----
-ALTER TABLE Habitaciones
-MODIFY COLUMN Tipo_Habitacion ENUM('Individual', 'Doble', 'Triple', 'Cuádruple', 'Suite') NOT NULL;
-------------------------------------------------------------------_
+CREATE TABLE HabitacionesC (
+    Num_HabitacionC VARCHAR(100) NOT NULL PRIMARY KEY,
+    Disponibilidad ENUM('Disponible', 'Ocupado', 'En limpieza', 'En mantenimiento', 'Otros', 'Reservado'),
+    Tipo_Habitacion VARCHAR(100) NOT NULL,
+    Capacidad INT NOT NULL,
+    Precio DECIMAL(10,2) NOT NULL
+);
+CREATE INDEX idx_id_habitacion ON Habitaciones(id_habitacion),
+CREATE INDEX idx_Disponibilidad ON Habitaciones(Disponibilidad),
+CREATE INDEX idx_Capacidad ON Habitaciones(Capacidad),
+CREATE INDEX idx_Precio ON  Habitaciones(Precio);
+----_____----
 
 CREATE TABLE Reservas (
     id_reserva INT PRIMARY KEY AUTO_INCREMENT,
@@ -75,3 +120,6 @@ CREATE INDEX idx_fecha_salida ON Reservas(fecha_salida)
 CREATE INDEX idx_id_habitacion ON Reservas(id_habitacion)
 CREATE INDEX idx_Num_Cedula_Cliente ON  Reservas(Num_Cedula_Cliente)
 ------------------------------------------------------------------_
+
+
+DROP DATABASE hotel
