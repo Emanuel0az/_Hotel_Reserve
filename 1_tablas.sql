@@ -1,8 +1,12 @@
--- Active: 1724445852651@@127.0.0.1@3306@hotel
+-- Active: 1724445948647@@127.0.0.1@3306@hotel
+
+--------------------------------------------------------
+
 CREATE DATABASE Hotel
 
 use hotel
 
+--------------------------------------------------------
 
 CREATE TABLE Clientes (
     Num_Cedula VARCHAR(100) NOT NULL PRIMARY KEY,
@@ -11,27 +15,7 @@ CREATE TABLE Clientes (
     email VARCHAR(100) NOT NULL
 );
 
-
-------------------------------------------------------------------_
-
-CREATE TABLE Trabajador (
-    Num_Cedula VARCHAR(100) NOT NULL PRIMARY KEY,
-    Nombre VARCHAR(100) NOT NULL,
-    Tipo_Trabajador ENUM('Recepcionista', 'Miselaneo', 'Botones')
-);
-
-------------------------------------------------------------------_
-
-CREATE TABLE Administradores (
-    Num_Cedula VARCHAR(100) NOT NULL PRIMARY KEY,
-    Nombre VARCHAR(100) NOT NULL,
-    Tipo_Administrador ENUM('G_General', 'G_Recepcion', 'G_Ventas_y_Marketing',
-                            'G_Recursos_Humanos', 'G_Finanzas', 'G_Eventos',
-                            'G_Mantenimiento', 'G_Seguridad')
-);
-
-
-------------------------------------------------------------------_
+--------------------------------------------------------
 
 create Table Hoteles (
     id_hotel INT PRIMARY KEY NOT NULL,
@@ -40,7 +24,7 @@ create Table Hoteles (
     ubicacion VARCHAR(100) NOT NULL
 );
 
-------------------------------------------------------------------_
+--------------------------------------------------------
 
 CREATE TABLE Habitaciones (
     Num_HabitacionA INT NOT NULL PRIMARY KEY,
@@ -52,13 +36,24 @@ CREATE TABLE Habitaciones (
     Foreign Key (id_hotel) REFERENCES Hoteles(id_hotel)
 );
 
-
------------------------------------------------------------------_
-
 ALTER TABLE Habitaciones
 MODIFY COLUMN Tipo_Habitacion ENUM('Individual', 'Doble', 'Triple', 'Cuádruple', 'Suite') NOT NULL;
 
-------------------------------------------------------------------_
+--------------------------------------------------------
+
+CREATE Table Historial_reservas (
+    id_historial INT PRIMARY KEY AUTO_INCREMENT,
+    id_hotel INT NOT NULL,
+    Num_habitaciones INT NOT NULL,
+    fecha_reserva DATE NOT NULL,
+    id_reserva INT NOT NULL,
+    Num_Cedula_Cliente VARCHAR(100) NOT NULL,
+    Foreign Key (id_hotel) REFERENCES Hoteles(id_hotel),
+    Foreign Key (Num_Cedula_Cliente) REFERENCES Clientes(Num_cedula),
+    Foreign Key (Num_habitaciones) REFERENCES Habitaciones(Num_HabitacionA)
+);
+
+--------------------------------------------------------
 
 CREATE TABLE Reservas (
     id_reserva INT PRIMARY KEY AUTO_INCREMENT,
@@ -71,4 +66,4 @@ CREATE TABLE Reservas (
     FOREIGN KEY (Num_Cedula_Cliente) REFERENCES Clientes(Num_Cedula)
 );
 
-DROP DATABASE hotel
+--  -  -  -  -   ;)
