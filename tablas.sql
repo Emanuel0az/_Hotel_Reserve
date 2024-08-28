@@ -1,4 +1,4 @@
--- Active: 1724545717679@@127.0.0.1@3306@hotel
+-- Active: 1724445852651@@127.0.0.1@3306@hotel
 CREATE DATABASE Hotel
 
 use hotel
