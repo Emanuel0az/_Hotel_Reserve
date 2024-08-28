@@ -186,9 +186,6 @@ VALUES
     (99, 10, 'Disponible', 'Cuádruple', 4, 340.00),
     (100, 10, 'Reservado', 'Suite', 2, 380.00);
 
-INSERT INTO Habitaciones (Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
-VALUES ('Disponible', 'Cuádruple', 4, 155.00);
-
 INSERT INTO Reservas (fecha_reserva, fecha_entrada, fecha_salida, id_habitacion, Num_Cedula_Cliente)
 VALUES
     ('2022-01-01', '2022-01-05', '2022-01-10', 1, '1234567890'),

@@ -8,7 +8,7 @@ SELECT * FROM mostar_disponibles
 CREATE View mostrar_mantenimiento AS 
 SELECT `Disponibilidad`,`Tipo_Habitacion`
 FROM habitaciones
-INNER JOIN reservas ON habitaciones.id_habitacion = reservas.id_habitacion
+INNER JOIN reservas ON habitaciones.Num_HabitacionA = reservas.id_habitacion
 WHERE `Disponibilidad` = 'En mantenimiento'
 
 SELECT * FROM mostrar_mantenimiento
@@ -17,10 +17,10 @@ drop view mostrar_mantenimiento
 
 CREATE View mostrar_ocupadas AS 
 SELECT h.`Disponibilidad`,
-     CONCAT('La habitación ', h.`id_habitacion`, ' está ocupada por ', c.`nombre`) as ocupante,
+     CONCAT('La habitación ', h.`Num_HabitacionA`, ' está ocupada por ', c.`nombre`) as ocupante,
      CONCAT('Entró el ', r.`fecha_entrada`, ' y saldrá el ', r.`fecha_salida`) as fecha_estadia
 FROM habitaciones h
-INNER JOIN reservas r ON h.`id_habitacion` = r.`id_habitacion`
+INNER JOIN reservas r ON h.`Num_HabitacionA` = r.`id_habitacion`
 INNER JOIN clientes c ON r.`Num_Cedula_Cliente` = c.`Num_Cedula`
 WHERE h.`Disponibilidad` = 'ocupado';
 
