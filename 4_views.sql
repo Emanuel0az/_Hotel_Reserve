@@ -31,13 +31,13 @@ SELECT * FROM mostrar_ocupadas
 --------------------------------------------------------
 
 CREATE VIEW Reservas_Dia_Actual AS
-SELECT r.id_reserva, r.fecha_reserva, r.fecha_entrada, r.fecha_salida, 
-       h.Num_HabitacionA, h.Tipo_Habitacion, h.Precio, 
-       c.Num_Cedula, c.Nombre, c.apellido, c.email
-FROM Reservas r
-JOIN Habitaciones h ON r.id_habitacion = h.Num_HabitacionA
-JOIN Clientes c ON r.Num_Cedula_Cliente = c.Num_Cedula
-WHERE r.fecha_reserva = CURDATE();
+SELECT `Reservas`.id_reserva, `Reservas`.fecha_reserva, `Reservas`.fecha_entrada, `Reservas`.fecha_salida, 
+       `Habitaciones`.Num_HabitacionA, `Habitaciones`.Tipo_Habitacion, `Habitaciones`.Precio, 
+       `Clientes`.Num_Cedula, `Clientes`.Nombre, `Clientes`.apellido, `Clientes`.email
+FROM Reservas
+JOIN Habitaciones ON `Reservas`.id_habitacion = `Reservas`.Num_HabitacionA
+JOIN Clientes ON `Reservas`.Num_Cedula_Cliente = `Clientes`.Num_Cedula
+WHERE `Reservas`.fecha_reserva = CURDATE();
 
 SELECT * FROM Reservas_Dia_Actual;
 

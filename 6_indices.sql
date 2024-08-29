@@ -1,12 +1,6 @@
 CREATE INDEX idx_Nombre ON Clientes(Nombre);
 CREATE INDEX idx_apellido ON Clientes(apellido);
 CREATE INDEX idx_email ON Clientes(email);
-CREATE INDEX idx_Num_Cedula ON Trabajador(Num_Cedula);
-CREATE INDEX idx_Nombre ON Trabajador(Nombre);
-CREATE INDEX idx_Tipo_Trabajador ON Trabajador(Tipo_Trabajador);
-CREATE INDEX idx_Num_Cedula ON Administradores(Num_Cedula);
-CREATE INDEX idx_Nombre ON Administradores(Nombre);
-CREATE INDEX idx_Tipo_Administrador ON Administradores(Tipo_Administrador);
 CREATE INDEX idx_Num_HabitacionA ON Habitaciones(Num_HabitacionA);
 CREATE INDEX idx_Disponibilidad ON Habitaciones(Disponibilidad);
 CREATE INDEX idx_Capacidad ON Habitaciones(Capacidad);

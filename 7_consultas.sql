@@ -1,14 +1,15 @@
-SELECT h.id_hotel, h.nombre, COUNT(r.id_reserva) AS num_reservas
-FROM Hoteles h
-JOIN Habitaciones ha ON h.id_hotel = ha.id_hotel
-JOIN Reservas r ON ha.Num_HabitacionA = r.id_habitacion
-GROUP BY h.id_hotel, h.nombre
-ORDER BY num_reservas DESC;
+SELECT `Hoteles`.id_hotel, `Hoteles`.nombre, COUNT(`Reservas`.id_reserva) AS num_reservas
+FROM Hoteles
+JOIN Habitaciones ON `Hoteles`.id_hotel = `Habitaciones`.id_hotel
+JOIN Reservas ON `Habitaciones`.Num_HabitacionA = `Reservas`.id_habitacion
+GROUP BY `Hoteles`.id_hotel, `Hoteles`.nombre
+ORDER BY num_reservas DESC
+LIMIT 1;
 
-SELECT COUNT(ha.Num_HabitacionA) AS num_habitaciones_disponibles
-FROM Habitaciones ha
-JOIN Hoteles h ON ha.id_hotel = h.id_hotel
-WHERE h.id_hotel = 1 AND ha.Disponibilidad = 'Disponible' AND ha.Num_HabitacionA NOT IN (
+SELECT COUNT(`Habitaciones`.Num_HabitacionA) AS num_habitaciones_disponibles
+FROM Habitaciones
+JOIN Hoteles ON `Habitaciones`.id_hotel = `Hoteles`.id_hotel
+WHERE `Hoteles`.id_hotel = 1 AND `Habitaciones`.Disponibilidad = 'Disponible' AND `Habitaciones`.Num_HabitacionA NOT IN (
   SELECT Num_HabitacionA
   FROM Reservas
   WHERE fecha_entrada <= 2022-01-01 AND fecha_salida >= 2022-01-10
@@ -37,27 +38,11 @@ WHERE email = 'pedro.rodriguez@example.com' AND fecha_reserva >= (CURDATE() - IN
 
 ------------------------------------------------------------ 7
 
-
-SELECT ROUND(AVG(fecha), 1)
+SELECT DATE(ROUND(AVG(fecha), 1))
 FROM (SELECT DATE(reservas.fecha_reserva) AS fecha, COUNT(*)
 FROM reservas
 WHERE DAY(fecha_reserva) = '20'
 GROUP BY DATE (reservas.fecha_reserva)
-) AS Sub_Redondeo
-
---------------------------------------------- 8
-
-SELECT ROUND(AVG(fecha), 1)
-FROM (
-  SELECT 
-    DATE(reservas.fecha_reserva) AS fecha,
-    COUNT(*) AS daily_reservas
-  FROM 
-    reservas
-  WHERE 
-    DAY(fecha_reserva) = 20
-  GROUP BY 
-    DATE(reservas.fecha_reserva)
 ) AS Sub_Redondeo
 
 --------------------------------------------- 9
@@ -73,6 +58,8 @@ AND NOT EXISTS (
   AND `Reservas`.fecha_reserva >= (CURDATE() - INTERVAL 1 MONTH)
 )
 GROUP BY `Hoteles`.id_hotel, `Hoteles`.nombre;
+
+SELECT * FROM reservas
 
 SELECT * FROM reservas
 
