@@ -34,3 +34,4 @@ BEGIN
         NEW.Num_Cedula_Cliente
     );
 END;
+

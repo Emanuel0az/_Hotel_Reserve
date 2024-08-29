@@ -1,32 +1,27 @@
 INSERT INTO Clientes (Num_Cedula, Nombre, apellido, email)
 VALUES
-    ('1234567890', 'Juan', 'Pérez', 'juan.perez@example.com'),
-    ('9876543210', 'María', 'González', 'maria.gonzalez@example.com'),
-    ('1111111111', 'Pedro', 'Rodríguez', 'pedro.rodriguez@example.com'),
-    ('2222222222', 'Ana', 'Hernández', 'ana.hernandez@example.com'),
-    ('3333333333', 'Luis', 'Martínez', 'luis.martinez@example.com'),
-    ('4444444444', 'Sofía', 'García', 'sofia.garcia@example.com'),
-    ('5555555555', 'Carlos', 'Sánchez', 'carlos.sanchez@example.com'),
-    ('6666666666', 'Laura', 'Díaz', 'laura.diaz@example.com'),
-    ('7777777777', 'Miguel', 'Fernández', 'miguel.fernandez@example.com'),
-    ('8888888888', 'Elena', 'Gómez', 'elena.gomez@example.com'),
-    ('9999999999', 'Rafael', 'López', 'rafael.lopez@example.com'),
-    ('1010101010', 'Isabel', 'Pérez', 'isabel.perez@example.com');
+    ('1-1954-0046', 'Gian', 'Moreno', 'sainex1314@gmail.com'),
+    ('6-0475-0004', 'Emanuel', 'Abarca', 'zuñiga@gmail.com'),
+    ('6-8200-2611', 'Tera', 'Rodríguez', 'teraRod@gmail.com'),
+    ('1-1302-0065', 'Ana', 'Hernández', 'hernana@gmail.com'),
+    ('5-8600-5243', 'Luis', 'Jose', 'joseluis@gmail.com'),
+    ('7-4680-1163', 'Roy', 'Melena', 'melroy@gmail.com'),
+    ('1-1689-5133', 'Osiris', 'Molina', 'moliris@gmail.com');
 
 --------------------------------------------------------
 
 INSERT INTO Hoteles (id_hotel, nombre, habitaciones, ubicacion)
 VALUES
-  (1, 'Hotel Plaza', '100', 'Centro de la ciudad'),
-  (2, 'Hotel Sol', '50', 'Zona turística'),
-  (3, 'Hotel Luna', '200', 'Cerca del aeropuerto'),
-  (4, 'Hotel Estrella', '150', 'En el corazón de la ciudad'),
-  (5, 'Hotel Mar', '80', 'Frente al mar'),
-  (6, 'Hotel Avenida', '120', 'En la avenida principal'),
-  (7, 'Hotel Central', '180', 'En el centro financiero'),
-  (8, 'Hotel Imperial', '250', 'En la zona de negocios'),
-  (9, 'Hotel del Parque', '100', 'En el parque nacional'),
-  (10, 'Hotel Miramar', '220', 'Con vistas al mar');
+  (1, 'Hotel Plaza', 8, 'Centro de la ciudad'),
+  (2, 'Hotel Sol', 6, 'Zona turística'),
+  (3, 'Hotel Luna', 10, 'Cerca del aeropuerto'),
+  (4, 'Hotel Estrella', 4, 'En el corazón de la ciudad'),
+  (5, 'Hotel Mar', 6, 'Frente al mar'),
+  (6, 'Hotel Avenida', 9, 'En la avenida principal'),
+  (7, 'Hotel Central', 10, 'En el centro financiero'),
+  (8, 'Hotel Imperial', 4, 'En la zona de negocios'),
+  (9, 'Hotel del Parque', 7, 'En el parque nacional'),
+  (10, 'Hotel Miramar', , 7'Con vistas al mar');
 
 --------------------------------------------------------
 
@@ -39,140 +34,121 @@ VALUES
     (5, 1, 'Reservado', 'Suite', 2, 200.00),
     (6, 1, 'Disponible', 'Individual', 1, 50.00),
     (7, 1, 'Ocupado', 'Doble', 2, 80.00),
-    (8, 1, 'En mantenimiento', 'Triple', 3, 120.00),
-    (9, 1, 'Disponible', 'Cuádruple', 4, 150.00),
-    (10, 1, 'Reservado', 'Suite', 2, 200.00);
+    (8, 1, 'En mantenimiento', 'Triple', 3, 120.00);
+
 
 --------------------------------------------------------
 
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
+    (9, 2, 'Disponible', 'Cuádruple', 4, 150.00),
+    (10, 2, 'Reservado', 'Suite', 2, 200.00),
     (11, 2, 'Disponible', 'Individual', 1, 60.00),
     (12, 2, 'Ocupado', 'Doble', 2, 100.00),
     (13, 2, 'En limpieza', 'Triple', 3, 140.00),
-    (14, 2, 'Disponible', 'Cuádruple', 4, 180.00),
-    (15, 2, 'Reservado', 'Suite', 2, 220.00),
-    (16, 2, 'Disponible', 'Individual', 1, 60.00),
-    (17, 2, 'Ocupado', 'Doble', 2, 100.00),
-    (18, 2, 'En mantenimiento', 'Triple', 3, 140.00),
-    (19, 2, 'Disponible', 'Cuádruple', 4, 180.00),
-    (20, 2, 'Reservado', 'Suite', 2, 220.00);
+    (14, 2, 'Disponible', 'Cuádruple', 4, 180.00);
 
 --------------------------------------------------------
 
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
+    (15, 3, 'Reservado', 'Suite', 2, 220.00),
+    (16, 3, 'Disponible', 'Individual', 1, 60.00),
+    (17, 3, 'Ocupado', 'Doble', 2, 100.00),
+    (18, 3, 'En mantenimiento', 'Triple', 3, 140.00),
+    (19, 3, 'Disponible', 'Cuádruple', 4, 180.00),
+    (20, 3, 'Reservado', 'Suite', 2, 220.00),
     (21, 3, 'Disponible', 'Individual', 1, 70.00),
     (22, 3, 'Ocupado', 'Doble', 2, 120.00),
     (23, 3, 'En limpieza', 'Triple', 3, 160.00),
     (24, 3, 'Disponible', 'Cuádruple', 4, 200.00),
-    (25, 3, 'Reservado', 'Suite', 2, 240.00),
-    (26, 3, 'Disponible', 'Individual', 1, 70.00),
-    (27, 3, 'Ocupado', 'Doble', 2, 120.00),
-    (28, 3, 'En mantenimiento', 'Triple', 3, 160.00),
-    (29, 3, 'Disponible', 'Cuádruple', 4, 200.00),
-    (30, 3, 'Reservado', 'Suite', 2, 240.00);
+    (25, 3, 'Reservado', 'Suite', 2, 240.00);
+
 
 --------------------------------------------------------
 
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
-    (31, 4, 'Disponible', 'Individual', 1, 80.00),
-    (32, 4, 'Ocupado', 'Doble', 2, 140.00),
-    (33, 4, 'En limpieza', 'Triple', 3, 180.00),
-    (34, 4, 'Disponible', 'Cuádruple', 4, 220.00),
-    (35, 4, 'Reservado', 'Suite', 2, 260.00),
-    (36, 4, 'Disponible', 'Individual', 1, 80.00),
-    (37, 4, 'Ocupado', 'Doble', 2, 140.00),
-    (38, 4, 'En mantenimiento', 'Triple', 3, 180.00),
-    (39, 4, 'Disponible', 'Cuádruple', 4, 220.00);
+    (26, 4, 'Disponible', 'Individual', 1, 70.00),
+    (27, 4, 'Ocupado', 'Doble', 2, 120.00),
+    (28, 4, 'En mantenimiento', 'Triple', 3, 160.00),
+    (29, 4, 'Disponible', 'Cuádruple', 4, 200.00);
+
 
 --------------------------------------------------------
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
-    (41, 5, 'Disponible', 'Individual', 1, 90.00),
-    (42, 5, 'Ocupado', 'Doble', 2, 160.00),
-    (43, 5, 'En limpieza', 'Triple', 3, 200.00),
-    (44, 5, 'Disponible', 'Cuádruple', 4, 240.00),
-    (45, 5, 'Reservado', 'Suite', 2, 280.00),
-    (46, 5, 'Disponible', 'Individual', 1, 90.00),
-    (47, 5, 'Ocupado', 'Doble', 2, 160.00),
-    (48, 5, 'En mantenimiento', 'Triple', 3, 200.00),
-    (49, 5, 'Disponible', 'Cuádruple', 4, 240.00),
-    (50, 5, 'Reservado', 'Suite', 2, 280.00);
+    (30, 5, 'Reservado', 'Suite', 2, 240.00),
+    (31, 5, 'Disponible', 'Individual', 1, 80.00),
+    (32, 5, 'Ocupado', 'Doble', 2, 140.00),
+    (33, 5, 'En limpieza', 'Triple', 3, 180.00),
+    (34, 5, 'Disponible', 'Cuádruple', 4, 220.00),
+    (35, 5, 'Reservado', 'Suite', 2, 260.00);
+
 
 --------------------------------------------------------
 
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
-    (51, 6, 'Disponible', 'Individual', 1, 100.00),
-    (52, 6, 'Ocupado', 'Doble', 2, 180.00),
-    (53, 6, 'En limpieza', 'Triple', 3, 220.00),
-    (54, 6, 'Disponible', 'Cuádruple', 4, 260.00),
-    (55, 6, 'Reservado', 'Suite', 2, 300.00),
-    (56, 6, 'Disponible', 'Individual', 1, 100.00),
-    (57, 6, 'Ocupado', 'Doble', 2, 180.00),
-    (58, 6, 'En mantenimiento', 'Triple', 3, 220.00),
-    (59, 6, 'Disponible', 'Cuádruple', 4, 260.00),
-    (60, 6, 'Reservado', 'Suite', 2, 300.00);
+    (36, 6, 'Disponible', 'Individual', 1, 80.00),
+    (37, 6, 'Ocupado', 'Doble', 2, 140.00),
+    (38, 6, 'En mantenimiento', 'Triple', 3, 180.00),
+    (39, 6, 'Disponible', 'Cuádruple', 4, 220.00),
+    (41, 6, 'Disponible', 'Individual', 1, 90.00),
+    (42, 6, 'Ocupado', 'Doble', 2, 160.00),
+    (43, 6, 'En limpieza', 'Triple', 3, 200.00),
+    (44, 6, 'Disponible', 'Cuádruple', 4, 240.00),
+    (45, 6, 'Reservado', 'Suite', 2, 280.00);
 
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
-    (61, 7, 'Disponible', 'Individual', 1, 110.00),
-    (62, 7, 'Ocupado', 'Doble', 2, 200.00),
-    (63, 7, 'En limpieza', 'Triple', 3, 240.00),
-    (64, 7, 'Disponible', 'Cuádruple', 4, 280.00),
-    (65, 7, 'Reservado', 'Suite', 2, 320.00),
-    (66, 7, 'Disponible', 'Individual', 1, 110.00),
-    (67, 7, 'Ocupado', 'Doble', 2, 200.00),
-    (68, 7, 'En mantenimiento', 'Triple', 3, 240.00),
-    (69, 7, 'Disponible', 'Cuádruple', 4, 280.00),
-    (70, 7, 'Reservado', 'Suite', 2, 320.00);
+    (46, 7, 'Disponible', 'Individual', 1, 90.00),
+    (47, 7, 'Ocupado', 'Doble', 2, 160.00),
+    (48, 7, 'En mantenimiento', 'Triple', 3, 200.00),
+    (49, 7, 'Disponible', 'Cuádruple', 4, 240.00),
+    (50, 7, 'Reservado', 'Suite', 2, 280.00),
+    (51, 7, 'Disponible', 'Individual', 1, 100.00),
+    (52, 7, 'Ocupado', 'Doble', 2, 180.00),
+    (53, 7, 'En limpieza', 'Triple', 3, 220.00),
+    (54, 7, 'Disponible', 'Cuádruple', 4, 260.00),
+    (55, 7, 'Reservado', 'Suite', 2, 300.00),
+    (56, 7, 'Disponible', 'Individual', 1, 100.00);
+
    
 --------------------------------------------------------
 
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
-    (71, 8, 'Disponible', 'Individual', 1, 120.00),
-    (72, 8, 'Ocupado', 'Doble', 2, 220.00),
-    (73, 8, 'En limpieza', 'Triple', 3, 260.00),
-    (74, 8, 'Disponible', 'Cuádruple', 4, 300.00),
-    (75, 8, 'Reservado', 'Suite', 2, 340.00),
-    (76, 8, 'Disponible', 'Individual', 1, 120.00),
-    (77, 8, 'Ocupado', 'Doble', 2, 220.00),
-    (78, 8, 'En mantenimiento', 'Triple', 3, 260.00),
-    (79, 8, 'Disponible', 'Cuádruple', 4, 300.00),
-    (80, 8, 'Reservado', 'Suite', 2, 340.00);
+    (57, 8, 'Ocupado', 'Doble', 2, 180.00),
+    (58, 8, 'En mantenimiento', 'Triple', 3, 220.00),
+    (59, 8, 'Disponible', 'Cuádruple', 4, 260.00),
+    (60, 8, 'Reservado', 'Suite', 2, 300.00);
 
---------------------------------------------------------
-       
+-------------------------------------------------------
+
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
-    (81, 9, 'Disponible', 'Individual', 1, 130.00),
-    (82, 9, 'Ocupado', 'Doble', 2, 240.00),
-    (83, 9, 'En limpieza', 'Triple', 3, 280.00),
-    (84, 9, 'Disponible', 'Cuádruple', 4, 320.00),
-    (85, 9, 'Reservado', 'Suite', 2, 360.00),
-    (86, 9, 'Disponible', 'Individual', 1, 130.00),
-    (87, 9, 'Ocupado', 'Doble', 2, 240.00),
-    (88, 9, 'En mantenimiento', 'Triple', 3, 280.00),
-    (89, 9, 'Disponible', 'Cuádruple', 4, 320.00),
-    (90, 9, 'Reservado', 'Suite', 2, 360.00);
+    (61, 9, 'Disponible', 'Individual', 1, 110.00),
+    (62, 9, 'Ocupado', 'Doble', 2, 200.00),
+    (63, 9, 'En limpieza', 'Triple', 3, 240.00),
+    (64, 9, 'Disponible', 'Cuádruple', 4, 280.00),
+    (65, 9, 'Reservado', 'Suite', 2, 320.00),
+    (66, 9, 'Disponible', 'Individual', 1, 110.00),
+    (67, 9, 'Ocupado', 'Doble', 2, 200.00),
+    (68, 9, 'En mantenimiento', 'Triple', 3, 240.00);
 
---------------------------------------------------------
- 
+------------------------------------------------------
+
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
-    (91, 10, 'Disponible', 'Individual', 1, 140.00),
-    (92, 10, 'Ocupado', 'Doble', 2, 260.00),
-    (93, 10, 'En limpieza', 'Triple', 3, 300.00),
-    (94, 10, 'Disponible', 'Cuádruple', 4, 340.00),
-    (95, 10, 'Reservado', 'Suite', 2, 380.00),
-    (96, 10, 'Disponible', 'Individual', 1, 140.00),
-    (97, 10, 'Ocupado', 'Doble', 2, 260.00),
-    (98, 10, 'En mantenimiento', 'Triple', 3, 300.00),
-    (99, 10, 'Disponible', 'Cuádruple', 4, 340.00),
-    (100, 10, 'Reservado', 'Suite', 2, 380.00);
+    (61, 10, 'Disponible', 'Individual', 1, 110.00),
+    (62, 10, 'Ocupado', 'Doble', 2, 200.00),
+    (63, 10, 'En limpieza', 'Triple', 3, 240.00),
+    (64, 10, 'Disponible', 'Cuádruple', 4, 280.00),
+    (65, 10, 'Reservado', 'Suite', 2, 320.00),
+    (66, 10, 'Disponible', 'Individual', 1, 110.00),
+    (67, 10, 'Ocupado', 'Doble', 2, 200.00),
+    (68, 10, 'En mantenimiento', 'Triple', 3, 240.00);
 
 --------------------------------------------------------
 

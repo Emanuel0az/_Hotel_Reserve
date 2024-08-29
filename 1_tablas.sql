@@ -20,7 +20,7 @@ CREATE TABLE Clientes (
 create Table Hoteles (
     id_hotel INT PRIMARY KEY NOT NULL,
     nombre VARCHAR(100) NOT NULL,
-    habitaciones VARCHAR(100) NOT NULL,
+    habitaciones INT NOT NULL,
     ubicacion VARCHAR(100) NOT NULL
 );
 
