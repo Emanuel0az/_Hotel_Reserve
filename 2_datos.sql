@@ -8,7 +8,29 @@ VALUES
     ('7-4680-1163', 'Roy', 'Melena', 'melroy@gmail.com'),
     ('1-1689-5133', 'Osiris', 'Molina', 'moliris@gmail.com');
 
---------------------------------------------------------
+-----------------------------------------------------------
+
+INSERT INTO Trabajador (Num_Cedula, Nombre, Tipo_Trabajador)
+VALUES
+    ('1234567890', 'Juan Pérez', 'Recepcionista'),
+    ('9876543210', 'María Rodríguez', 'Miselaneo'),
+    ('1111111111', 'Pedro Gómez', 'Botones'),
+    ('2222222222', 'Ana López', 'Recepcionista'),
+    ('3333333333', 'Carlos Díaz', 'Miselaneo');
+
+----------------------------------------------------------
+
+
+
+INSERT INTO Administradores (Num_Cedula, Nombre, Tipo_Administrador)
+VALUES
+    ('4444444444', 'Sofía García', 'G_General'),
+    ('5555555555', 'Luis Hernández', 'G_Recepcion'),
+    ('6666666666', 'María Sánchez', 'G_Ventas_y_Marketing'),
+    ('7777777777', 'Juan Carlos Martínez', 'G_Recursos_Humanos'),
+    ('8888888888', 'Ana Isabel López', 'G_Finanzas');
+
+----------------------------------------------------------
 
 INSERT INTO Hoteles (id_hotel, nombre, habitaciones, ubicacion)
 VALUES
@@ -28,13 +50,13 @@ VALUES
 INSERT INTO Habitaciones (Num_HabitacionA, id_hotel, Disponibilidad, Tipo_Habitacion, Capacidad, Precio)
 VALUES
     (1, 1, 'Disponible', 'Individual', 1, 50.00),
-    (2, 1, 'Ocupado', 'Doble', 2, 80.00),
-    (3, 1, 'En limpieza', 'Triple', 3, 120.00),
+    (2, 1, 'Disponible', 'Doble', 2, 80.00),
+    (3, 1, 'Disponible', 'Triple', 3, 120.00),
     (4, 1, 'Disponible', 'Cuádruple', 4, 150.00),
-    (5, 1, 'Reservado', 'Suite', 2, 200.00),
+    (5, 1, 'Disponible', 'Suite', 2, 200.00),
     (6, 1, 'Disponible', 'Individual', 1, 50.00),
-    (7, 1, 'Ocupado', 'Doble', 2, 80.00),
-    (8, 1, 'En mantenimiento', 'Triple', 3, 120.00);
+    (7, 1, 'Disponible', 'Doble', 2, 80.00),
+    (8, 1, 'Disponible', 'Triple', 3, 120.00);
 
 
 --------------------------------------------------------
@@ -142,16 +164,20 @@ VALUES
 INSERT INTO Reservas (fecha_reserva, fecha_entrada, fecha_salida, id_habitacion, Num_Cedula_Cliente)
 VALUES
     ('2024-01-01', '2024-01-02', '2024-01-03', 1, '1-1954-0046'),
-    ('2024-02-05', '2024-02-06', '2022-01-08', 2, '6-0475-0004'),
-    ('2024-03-10', '2024-03-11', '2022-01-13', 3, '6-8200-2611'),
-    ('2024-04-15', '2024-04-16', '2022-01-17', 4, '1-1302-0065'),
-    ('2024-05-20', '2024-08-21', '2022-01-23', 5, '5-8600-5243'),
-    ('2024-06-22', '2024-08-23', '2022-02-24', 6, '5-8600-5243'),
-    ('2024-07-30', '2024-08-29', '2022-02-30', 7, '7-4680-1163'),
-    ('2024-08-04', '2024-08-29', '2022-02-30', 8, '1-1689-5133');
+    ('2024-02-05', '2024-02-06', '2022-02-08', 2, '6-0475-0004'),
+    ('2024-03-10', '2024-03-11', '2022-03-13', 3, '6-8200-2611'),
+    ('2024-04-15', '2024-04-16', '2022-04-17', 4, '1-1302-0065'),
+    ('2024-05-20', '2024-08-21', '2022-08-23', 5, '5-8600-5243'),
+    ('2024-06-22', '2024-08-23', '2022-08-24', 6, '5-8600-5243'),
+    ('2024-07-30', '2024-08-29', '2022-08-30', 7, '7-4680-1163'),
+    ('2024-08-04', '2024-08-29', '2022-08-30', 8, '1-1689-5133');
 
 --------------------------------------------------------
 
+SELECT * FROM clientes WHERE `Num_Cedula` = '1-1689-5133'
+
+drop table reservas
+
 INSERT INTO Reservas (fecha_reserva, fecha_entrada, fecha_salida, id_habitacion, Num_Cedula_Cliente)
 VALUES
-    ('2022-03-11', '2022-03-16', '2022-03-21', 1, '1111111111');
+    ('¿?', '¿?', '¿?', ¿?, '¿?');

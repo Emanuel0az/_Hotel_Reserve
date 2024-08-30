@@ -53,6 +53,25 @@ CREATE Table Historial_reservas (
 
 --------------------------------------------------------
 
+
+CREATE TABLE Administradores (
+    Num_Cedula VARCHAR(100) NOT NULL PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Tipo_Administrador ENUM('G_General', 'G_Recepcion', 'G_Ventas_y_Marketing',
+                            'G_Recursos_Humanos', 'G_Finanzas', 'G_Eventos',
+                            'G_Mantenimiento', 'G_Seguridad')
+);
+
+-------------------------------------------------------
+
+CREATE TABLE Trabajador (
+    Num_Cedula VARCHAR(100) NOT NULL PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Tipo_Trabajador ENUM('Recepcionista', 'Miselaneo', 'Botones')
+);
+
+--------------------------------------------------------
+
 CREATE TABLE Reservas (
     id_reserva INT PRIMARY KEY AUTO_INCREMENT,
     fecha_reserva DATE NOT NULL,
