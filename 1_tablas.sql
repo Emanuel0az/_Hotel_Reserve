@@ -83,4 +83,4 @@ CREATE TABLE Reservas (
     FOREIGN KEY (Num_Cedula_Cliente) REFERENCES Clientes(Num_Cedula)
 );
 
---  -  -  -  -   ;)
+--  -  -  -  -   ;)--
