@@ -1,0 +1,13 @@
+CREATE INDEX idx_Nombre ON Clientes(Nombre);
+CREATE INDEX idx_apellido ON Clientes(apellido);
+CREATE INDEX idx_email ON Clientes(email);
+CREATE INDEX idx_Num_HabitacionA ON Habitaciones(Num_HabitacionA);
+CREATE INDEX idx_Disponibilidad ON Habitaciones(Disponibilidad);
+CREATE INDEX idx_Capacidad ON Habitaciones(Capacidad);
+CREATE INDEX idx_Precio ON  Habitaciones(Precio);
+CREATE INDEX idx_id_reserva on Reservas(id_reserva);
+CREATE INDEX idx_fecha_reserva ON Reservas(fecha_reserva);
+CREATE INDEX idx_fecha_entrada ON Reservas(fecha_entrada);
+CREATE INDEX idx_fecha_salida ON Reservas(fecha_salida);
+CREATE INDEX idx_id_habitacion ON Reservas(id_habitacion);
+CREATE INDEX idx_Num_Cedula_Cliente ON  Reservas(Num_Cedula_Cliente);
