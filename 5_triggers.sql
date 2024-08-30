@@ -20,7 +20,9 @@ BEGIN
     UPDATE Habitaciones
     SET `Disponibilidad` = 'Disponible'
     WHERE `Num_HabitacionA` = OLD.id_habitacion;
-END
+END;
+
+----------------------------------------------------
 
 CREATE TRIGGER validar_ocupadas
 BEFORE INSERT ON Reservas
@@ -32,6 +34,6 @@ BEGIN
     WHERE Num_HabitacionA = NEW.id_habitacion;
     IF habitacion_estado = 'Ocupado' THEN
         SIGNAL SQLSTATE '45000'
-        SET MESSAGE_TEXT = 'Esta habitación ya está ocupada';
+        SET MESSAGE_TEXT = 'Esta habitación ya está ocupada.';
     END IF;
 END;

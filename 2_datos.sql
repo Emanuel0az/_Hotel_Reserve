@@ -180,4 +180,6 @@ drop table reservas
 
 INSERT INTO Reservas (fecha_reserva, fecha_entrada, fecha_salida, id_habitacion, Num_Cedula_Cliente)
 VALUES
-    ('¿?', '¿?', '¿?', ¿?, '¿?');
+    (CURDATE(), '2024-01-02', '2024-01-04', 15, '1-1954-0046');
+
+SELECT * FROM reservas
